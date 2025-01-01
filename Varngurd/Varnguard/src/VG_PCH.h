@@ -1,0 +1,9 @@
+#include <iostream>
+#include <array>
+#include <vector>
+#include <d3d11.h>
+#pragma comment(lib,"d3d11.lib")
+#include <dxgi.h>
+#pragma comment(lib,"dxgi.lib")
+#include <Windows.h>
+#include "Core.h"

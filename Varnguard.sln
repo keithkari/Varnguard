@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Varnguard", "Varngurd\Varngurd.vcxproj", "{631AC377-3FF0-49D0-B68F-3651E5B19E21}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game_ Demo", "Game_ Demo\Game_ Demo.vcxproj", "{3EF0940F-C740-4629-90E9-8F9843BBBF42}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Dist|x64 = Dist|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{631AC377-3FF0-49D0-B68F-3651E5B19E21}.Debug|x64.ActiveCfg = Debug|x64
+		{631AC377-3FF0-49D0-B68F-3651E5B19E21}.Debug|x64.Build.0 = Debug|x64
+		{631AC377-3FF0-49D0-B68F-3651E5B19E21}.Dist|x64.ActiveCfg = Dist|x64
+		{631AC377-3FF0-49D0-B68F-3651E5B19E21}.Dist|x64.Build.0 = Dist|x64
+		{631AC377-3FF0-49D0-B68F-3651E5B19E21}.Release|x64.ActiveCfg = Release|x64
+		{631AC377-3FF0-49D0-B68F-3651E5B19E21}.Release|x64.Build.0 = Release|x64
+		{3EF0940F-C740-4629-90E9-8F9843BBBF42}.Debug|x64.ActiveCfg = Debug|x64
+		{3EF0940F-C740-4629-90E9-8F9843BBBF42}.Debug|x64.Build.0 = Debug|x64
+		{3EF0940F-C740-4629-90E9-8F9843BBBF42}.Dist|x64.ActiveCfg = Dist|x64
+		{3EF0940F-C740-4629-90E9-8F9843BBBF42}.Dist|x64.Build.0 = Dist|x64
+		{3EF0940F-C740-4629-90E9-8F9843BBBF42}.Release|x64.ActiveCfg = Release|x64
+		{3EF0940F-C740-4629-90E9-8F9843BBBF42}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
