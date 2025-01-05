@@ -52,3 +52,6 @@
 *.db
 *.bin
 /.vs/Varnguard/v17
+*.iobj
+*.exp
+*.ipdb

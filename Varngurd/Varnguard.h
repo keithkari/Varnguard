@@ -1,13 +1,16 @@
 #pragma once
 
-#include "src\VG_PCH.h"
+#include "VG_PCH.h"
 
 //includes the engine core
-#include "src\Core.h"
+#include "Core.h"
 
 //incudes the main application
-#include "src\Application.h"
+#include "Application.h"
 
 // -----entry point--------
-#include "src\EntryPoint.h"
+#include "EntryPoint.h"
 //-------------------------
+
+// Logger
+#include "Log.h"

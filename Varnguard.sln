@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Varnguard", "Varngurd\Varng
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game_ Demo", "Game_ Demo\Game_ Demo.vcxproj", "{3EF0940F-C740-4629-90E9-8F9843BBBF42}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "spdlog", "Varngurd\3rd_party_libs\spdlog\build\spdlog.vcxproj", "{1993F3DE-B70F-36FC-9B2A-052203D53F7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -26,6 +28,12 @@ Global
 		{3EF0940F-C740-4629-90E9-8F9843BBBF42}.Dist|x64.Build.0 = Dist|x64
 		{3EF0940F-C740-4629-90E9-8F9843BBBF42}.Release|x64.ActiveCfg = Release|x64
 		{3EF0940F-C740-4629-90E9-8F9843BBBF42}.Release|x64.Build.0 = Release|x64
+		{1993F3DE-B70F-36FC-9B2A-052203D53F7B}.Debug|x64.ActiveCfg = Debug|x64
+		{1993F3DE-B70F-36FC-9B2A-052203D53F7B}.Debug|x64.Build.0 = Debug|x64
+		{1993F3DE-B70F-36FC-9B2A-052203D53F7B}.Dist|x64.ActiveCfg = Debug|x64
+		{1993F3DE-B70F-36FC-9B2A-052203D53F7B}.Dist|x64.Build.0 = Debug|x64
+		{1993F3DE-B70F-36FC-9B2A-052203D53F7B}.Release|x64.ActiveCfg = Release|x64
+		{1993F3DE-B70F-36FC-9B2A-052203D53F7B}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

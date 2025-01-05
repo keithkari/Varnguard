@@ -1,0 +1,3 @@
+[submodule "Varngurd/3rd_party_libs/spdlog"]
+	path = Varngurd/3rd_party_libs/spdlog
+	url = https://github.com/gabime/spdlog

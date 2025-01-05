@@ -5,12 +5,12 @@ namespace Varnguard
 {
 	Renderer::Renderer()
 	{
-	
+		VG_LOG_CORE_INFO("Renderer created");
 	}
 
 	Renderer::~Renderer()
 	{
-		
+		VG_LOG_CLIENT_INFO("Renderer destroyed");
 	}
 
 	void Renderer::swap_buffer()
@@ -21,6 +21,13 @@ namespace Varnguard
 
 	void Renderer::init(HWND handle)
 	{
+		D3D_FEATURE_LEVEL featureLevels[] = {
+	   D3D_FEATURE_LEVEL_11_0, // Try for Direct3D 11.0 feature level
+	   D3D_FEATURE_LEVEL_10_1, // Fall back to Direct3D 10.1 feature level if 11.0 is not supported
+	   D3D_FEATURE_LEVEL_10_0, // Fall back to Direct3D 10.0 feature level
+	   D3D_FEATURE_LEVEL_9_3   // Fall back to Direct3D 9.3 feature level if nothing higher is supported
+		};
+
 		DXGI_SWAP_CHAIN_DESC swapChainDesc = {};
 		swapChainDesc.BufferDesc.Width = 0;
 		swapChainDesc.BufferDesc.Height = 0;
@@ -38,24 +45,30 @@ namespace Varnguard
 
 		HRESULT hr = S_OK;
 
-		hr = D3D11CreateDeviceAndSwapChain(nullptr, D3D_DRIVER_TYPE_HARDWARE, nullptr, 0, nullptr, 0, D3D11_SDK_VERSION, &swapChainDesc, &swap_chain, &device, nullptr, &device_context);
+		hr = D3D11CreateDeviceAndSwapChain(nullptr, D3D_DRIVER_TYPE_HARDWARE, nullptr, 0, featureLevels, ARRAYSIZE(featureLevels), D3D11_SDK_VERSION, &swapChainDesc, &swap_chain, &device, nullptr, &device_context);
 
 		if (hr != S_OK)
 		{
-			std::cout << "Error!\n";
-			exit(0);
+			VG_LOG_CORE_ERROR("Error creating DirectX3D 11 device and swap chain");
+			system("pause");
+			//exit(0);
 		}
+		else
+			VG_LOG_CORE_INFO("DirectX3D 11 device and swap chain created");
 
 		ComPtr<ID3D11Resource> back_buffer;
 		swap_chain->GetBuffer(0, IID_PPV_ARGS(&back_buffer));
+		VG_LOG_CORE_INFO("Gotten the Back buffer");
 		device->CreateRenderTargetView(back_buffer.Get(), nullptr, &target);
-
+		VG_LOG_CORE_INFO("Created render target view");
+		
 	}
 	void Renderer::clear_buffer(float r, float g, float b, float a)
 	{
 		float color[4] = { r, g, b, a };
 
 		device_context->ClearRenderTargetView(target.Get(), color);
+		VG_LOG_CORE_INFO("Cleared render target view");
 	}
 	
 }

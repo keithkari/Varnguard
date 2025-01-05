@@ -1,54 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="src">
+      <UniqueIdentifier>{56d2e18a-ac69-42fb-908b-46ddb9b4b7e3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{265bd066-0673-47a4-b3de-3a72515b1ce7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Renderer\DirectX3D%28Windows%29">
+      <UniqueIdentifier>{13c7ce39-bc5b-496e-a850-659437d5c73c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logging">
+      <UniqueIdentifier>{a3a847b2-b49c-4201-8e13-ad27560bd6f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{3d6eb9cc-2bce-487a-b5fc-9fcf7b14450c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{4030a542-9168-4c10-808f-f9308cc72c11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Event System">
+      <UniqueIdentifier>{bd3e4998-186a-4f1b-a4cd-4d4e745fe784}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Varnguard\src\Application.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Varnguard\src\Core.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Varnguard\src\EntryPoint.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Varnguard\Varnguard.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Varnguard\src\VG_PCH.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Varnguard\src\Renderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Varnguard\src\Log.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClCompile Include="Application.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="VG_PCH.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Renderer\DirectX3D%28Windows%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>Logging</Filter>
+    </ClCompile>
+    <ClCompile Include="Window_Win32.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Varnguard\src\Application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Varnguard\src\VG_PCH.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Varnguard\src\Renderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Varnguard\src\Log.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="Application.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Core.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="EntryPoint.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="VG_PCH.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Renderer\DirectX3D%28Windows%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Varnguard.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>Logging</Filter>
+    </ClInclude>
+    <ClInclude Include="Window_Win32.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Event.h">
+      <Filter>Event System</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyEvents.h">
+      <Filter>Event System</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Event System</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationEvents.h">
+      <Filter>Event System</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

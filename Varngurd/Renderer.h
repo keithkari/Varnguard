@@ -1,5 +1,6 @@
 #pragma once
 #include <wrl.h>
+#include "Log.h"
 
 using namespace Microsoft;
 using namespace WRL;

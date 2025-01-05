@@ -1,3 +1,4 @@
+#define SPDLOG_COMPILED_LIB
 #include <Varnguard.h>
 #include <memory>
 #include <stdio.h>
@@ -13,15 +14,16 @@ public:
 
 std::unique_ptr<Application> Varnguard::createobject()
 {
+	VG_LOG_CLIENT_INFO("Returning client object");
 	return std::make_unique<game>();
 }
 
 game::game()
 {
+	VG_LOG_CLIENT_INFO("Client created");
 }
 
 game::~game()
 {
-	printf("Bye game!!\n");
-	DestroyWindow(handle);
+	VG_LOG_CLIENT_INFO("Client destroyed");
 }

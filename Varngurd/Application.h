@@ -1,6 +1,8 @@
 #pragma once
 
 #include"VG_PCH.h"
+#include "Window.h"
+#include "Window_Win32.h"
 #include "Renderer.h"
 
 namespace Varnguard
@@ -12,12 +14,12 @@ namespace Varnguard
 		virtual ~Application();
 
 		void run();
-		void init();
 		void oncreate(HWND handle);
 		void ondestroy();
-		HWND handle;
-		HINSTANCE instance;
 		Renderer ren;
+
+	private:
+		std::unique_ptr<Window_Win32> window;
 	};
 
 	std::unique_ptr<Application> createobject();
