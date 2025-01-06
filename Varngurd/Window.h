@@ -12,7 +12,5 @@ namespace Varnguard
 		virtual void show() = 0;
 		virtual void hide() = 0;
 		virtual void destroy() = 0;
-		virtual CallbackFn& SetEventCallback(const CallbackFn& callback) = 0;
-		CallbackFn EventCallback;
 	};
 }

@@ -2,6 +2,9 @@
 
 #pragma once
 #include "Window.h"
+#include "KeyEvents.h"
+#include "Mouse.h"
+#include "ApplicationEvents.h"
 
 namespace Varnguard
 {
@@ -15,13 +18,33 @@ namespace Varnguard
 		void show() override;
 		void hide() override;
 		void destroy() override;
-		CallbackFn& SetEventCallback(const CallbackFn& callback) override { return EventCallback = callback; }
 	
 		HWND hwnd;
 		HINSTANCE instance;
 	private:
 		static LRESULT CALLBACK winproc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 		{
+			static Event_dispatcher dispatcher;
+
+			static bool Initilised = false;
+
+			if (!Initilised)
+			{
+				dispatcher.Add_Listeners<key_pressed>([](Events& e)
+					{
+						auto& keyp_event = static_cast<key_pressed&>(e);
+						VG_LOG_CLIENT_INFO("Key Pressed: {0}", keyp_event.GetKeyCode());
+					})
+			}
+
+			dispatcher.Add_Listeners<MouseMovedEvent>([](Events& e)
+				{
+					auto& mousem_event = static_cast<MouseMovedEvent&>(e);
+					VG_LOG_CLIENT_INFO("Mouse Moved to:""(x = {0}, y = {1})""", mousem_event.getx(), mousem_event.gety());
+				});
+
+			Initilised = true;
+
 			switch (msg)
 			{
 			case WM_NCCREATE:
@@ -33,6 +56,13 @@ namespace Varnguard
 				VG_LOG_CORE_INFO("Window created: WM_NCCREATE.");
 				break;
 			}
+			case WM_KEYDOWN:
+			{
+				key_pressed key(static_cast<int>(wparam));
+				dispatcher.Dispach_Messege<key_pressed>(key);
+				break;
+			}
+
 			case WM_CLOSE:
 			{
 				VG_LOG_CORE_INFO("Close confirmation requested.");

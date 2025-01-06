@@ -6,6 +6,7 @@
 #include <memory>
 #include <string>
 #include <functional>
+#include <typeindex>
 
 namespace Varnguard
 {
@@ -48,27 +49,27 @@ namespace Varnguard
 
 	class Event_dispatcher
 	{
-		template<typename T>
-		using Callback = std::function<bool(T&)>;
 	public:
-		Event_dispatcher(Events& event) : m_event(event)
+		using Callback = std::function<void(Events&)>;
+	
+		template<typename T>
+		void Add_Listeners(Callback& callback)
 		{
-
+			listeners[typeid(T)].push_back(callback);
 		}
 
 		template<typename T>
-		bool dispach(Callback<T> func)
+		void Dispach_Messege(Event& event)
 		{
-			if (m_event.get_event_type() == T::get_static_event())
+			auto& callbacks = listeners[typeid(T)];
+			for (size_t i = 0; i < callbacks.size(); ++i)
 			{
-				m_event.m_handled = func(static_cast<T&>(m_event));
-				return m_event.m_handled;
+				callbacks[i](*dynamic_cast<T*>(event));
 			}
-			return false;
 		}
 
 	private:
-		Events& m_event;
+		std::unordered_map<std::type_index, std::vector<Callback>> listeners;
 	};
 
 	template<Event_Type type>

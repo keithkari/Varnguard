@@ -6,7 +6,8 @@ namespace Varnguard
 {
 	class VARNGUARD_API MouseMovedEvent : public Events
 	{
-		MouseEvent(float x, float y) : x(x), y(y){}
+	public:
+		MouseEvent(float x, float y) : x(x), y(y) {};
 		
 		float getx() { return x; }
 		float gety() { return y; }
@@ -20,10 +21,11 @@ namespace Varnguard
 
 	class VARNGUARD_API MouseScrolledEvent : public Events
 	{
-		MouseEvent(float xoff, float yoff) : xoff(xoff), yoff(yoff) {}
+	public:
+		MouseEvent(float xoff, float yoff) : xoff(xoff), yoff(yoff) {};
 
-		float getx() { return xoff; }
-		float gety() { return yoff; }
+		float getxoff() { return xoff; }
+		float getyoff() { return yoff; }
 
 		EVENT_FLAG_TYPE(Input | Mouse);
 		EVENT_TYPE(MouseScroll);
@@ -44,19 +46,4 @@ namespace Varnguard
 		int m_button;
 	};
 
-	class VARNGUARD_API mouse_clicke : public mouseclick
-	{
-	public:
-		key_pressed(int button) : mouseclick(button) {}
-
-		EVENT_TYPE(MouseClicked);
-	};
-
-	class VARNGUARD_API key_released : public mouseclick
-	{
-	public:
-		key_released(int button) : mouseclick(button) {}
-
-		EVENT_TYPE(MouseReleased);
-	};
 }
